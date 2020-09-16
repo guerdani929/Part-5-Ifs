@@ -10,11 +10,15 @@ namespace Part_5_Ifs
     {
         static void Main(string[] args)
         {
+            Random generator = new Random();
+
             string input;
             int age;
             string inp;
             int cat;
-
+            int ran;
+            int div;
+            string uinp;
             Console.Write("Please enter your age: ");
             input = Console.ReadLine();
 
@@ -22,8 +26,8 @@ namespace Part_5_Ifs
 
             if (int.TryParse(input, out age))
             {
-                Console.WriteLine($"You are {age} correct?");
-                Console.ReadLine();
+                //Console.WriteLine($"You are {age} correct?");
+                //Console.ReadLine();
 
                 if (age > 18)
                 {
@@ -89,7 +93,35 @@ namespace Part_5_Ifs
 
             Console.WriteLine("------------------------------------------------------------------------------------------------------------------------");
 
+            ran = generator.Next(2, 6);
 
+            Console.WriteLine($"Your Random Number is {ran}");
+
+            Console.Write("Enter a number larger than the random number: ");
+            uinp = Console.ReadLine();
+
+            if (int.TryParse(uinp, out div))
+            {
+                if (div % ran == 0)
+                {
+                    Console.WriteLine($"{div} is divisible by {ran}");
+                }
+                else if (div < ran)
+                {
+                    Console.WriteLine($"{div} is smaller than {ran}");
+                }
+                else if (div % ran != 0) 
+                {
+                    Console.WriteLine($"{div} is not divisible by {ran}");
+                
+                }
+            }
+            else 
+            {
+                Console.WriteLine("Invalid Input");
+            }
+
+            
 
 
 
