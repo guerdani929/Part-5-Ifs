@@ -10,15 +10,48 @@ namespace Part_5_Ifs
     {
         static void Main(string[] args)
         {
-            string age;
+            string input;
+            int age;
 
 
             Console.Write("Please enter your age: ");
-            age = Console.ReadLine();
+            input = Console.ReadLine();
 
 
 
-            if int.TryParse(age, )
+            if (int.TryParse(input, out age))
+            {
+                Console.WriteLine($"You are {age} correct?");
+                Console.ReadLine();
+
+                if (age > 18)
+                {
+                    Console.WriteLine("You're an adult");
+                }
+                else if (age <= 18)
+                {
+                    Console.WriteLine("You're a teen");
+                }
+                else if (age <= 5) 
+                {
+                    Console.WriteLine("You're a toddler");
+                }
+                else if (age <= 10) 
+                {
+                    Console.WriteLine("You're a child");
+                }
+                else if (age <= 12)
+                {
+                    Console.WriteLine("You're a preteen");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Please enter a valid input");
+            }
+           
+            
+            
 
 
 
@@ -32,8 +65,7 @@ namespace Part_5_Ifs
 
 
 
-
-
+            Console.ReadLine();
 
 
 
